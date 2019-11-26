@@ -15,13 +15,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void searchDraw(View view){
-        Intent it = new Intent(MainActivity.this, SearchActivity.class);
-        startActivity(it);
+    public void searchDraw(View v){
+        setContentView(R.layout.activity_search);
     }
 
-//    public void searchDraw(View v) {
-//        startActivity(new Intent(getBaseContext(), SearchActivity.class));
+//    public void searchDraw (View v){
+//        Intent intent = new Intent(this, SearchActivity.class);
+//        startActivity(intent);
 //    }
+
+
+
 
 }
