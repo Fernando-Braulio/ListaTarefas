@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
-void main(){
+void main() {
   runApp(MaterialApp(
     home: Home(),
   ));
@@ -16,12 +16,40 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   List _toDoList = [];
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Lista de Tarefas"),
+        backgroundColor: Colors.lightBlueAccent,
+        centerTitle: true,
+      ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        labelText: "Nova Tarefa",
+                        labelStyle: TextStyle(color: Colors.lightBlueAccent)),
+                  ),
+                ),
+                RaisedButton(
+                    color: Colors.lightBlueAccent,
+                    child: Text("ADD"),
+                    textColor: Colors.white,
+                    onPressed: () {})
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   //Função para pegar o arquivo json.
@@ -40,12 +68,11 @@ class _HomeState extends State<Home> {
 
   //Função para pegar os dados do arquivo json
   Future<String> _readData() async {
-    try{
-
+    try {
       final file = await _getFile();
       return file.readAsString();
-
-    }catch (e){return null;}
+    } catch (e) {
+      return null;
+    }
   }
-
 }
