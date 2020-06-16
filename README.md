@@ -2,6 +2,7 @@
 #### Realizada no curso Criação de Apps Android e IOs com Flutter do Daniel Ciolfi - Seção 15
 
 #####Tela inicial
+![Tela inicial](https://github.com/Fernando-Braulio/ListaTarefas/blob/master/assets/home.jpg)
 
 A new Flutter project.
 
